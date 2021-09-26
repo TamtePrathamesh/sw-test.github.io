@@ -1,6 +1,6 @@
 var cacheName = "swCache";
 
-let allCache = ["index.html"];
+let allCache = ["/", "index.html"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(
