@@ -2,14 +2,13 @@ let cacheName = "swCache";
 
 let allCache = ['/'];
 
-window.addEventListener('install', (e) => {
-    e.waitUntil(
-        caches.open(cacheName)
-        .then((cache) => {
-            console.log('Cache Opened');
-            cache.addAll(allCache);
-        })
-    );
+self.addEventListener("install", (e) => {
+  e.waitUntil(
+    caches.open(cacheName).then((cache) => {
+      console.log("Cache Opened");
+      cache.addAll(allCache);
+    })
+  );
 });
 
 self.addEventListener('fetch', function(event) {
