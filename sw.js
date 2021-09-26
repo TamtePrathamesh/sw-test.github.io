@@ -12,6 +12,7 @@ self.addEventListener("install", (e) => {
 });
 
 self.addEventListener("fetch", function (event) {
+  console.log("ER", event.request);
   event.respondWith(
     caches.match(event.request).then(function (response) {
       // Cache hit - return response
